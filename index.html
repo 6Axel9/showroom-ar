@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Showroom</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  </head>
+  <body>
+    
+    <style>
+      .content {
+        position:relative;
+        width: 100%;
+        height: 99vh;
+        flex: 100%;
+        display: flex;
+        align-items: center;
+        box-sizing: content-box;
+      }
+      .content model-viewer {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
+    <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+    <div class="content">
+    <model-viewer ar camera-controls alt="HondaE" src="HondaE.glb" ios-src="HondaE.usdz"></model-viewer>
+    </div>
+  </body>
+</html>
