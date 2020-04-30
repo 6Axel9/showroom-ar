@@ -8,7 +8,15 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
   </head>
   <body>
-    
+    <style>
+      .viewer {
+        position: absolute;
+        left: 5%;
+        top: 5%;
+        width: 90%;
+        height: 90vh;
+      }
+    </style>
     <!--<style>
       .content {
         position:relative;
@@ -24,11 +32,20 @@
         height: 100%;
       }
     </style>-->
+    
+    <!-- 🚨 REQUIRED: Web Components polyfill to support Edge and Firefox < 63 -->
+    <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.1.3/webcomponents-loader.js"></script>
 
+    <!-- 💁 OPTIONAL: Intersection Observer polyfill for better performance in Safari and IE11 -->
+    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+
+    <!-- 💁 OPTIONAL: Resize Observer polyfill improves resize behavior in non-Chrome browsers -->
+    <script src="https://unpkg.com/resize-observer-polyfill@1.5.1/dist/ResizeObserver.js"></script>
+    
+     <!-- 🚨 REQUIRED: Model Viewer core package for 3D and AR models of .glb/.gltf/.usdz formats -->
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
     <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
-    <div class="content">
-    <model-viewer ar camera-controls alt="HondaE" src="HondaE.glb" ios-src="HondaE.usdz"></model-viewer>
-    </div>
+    
+    <model-viewer class="viewer" ar ar-mode="preferred"camera-controls alt="HondaE" src="HondaE.glb" ios-src="HondaE.usdz"></model-viewer>
   </body>
 </html>
