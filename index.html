@@ -33,6 +33,12 @@
     
     <model-viewer class="viewer" ar ar-mode="preferred"camera-controls alt="Charger" src="Charger.gltf" ios-src="Charger.usdz"></model-viewer>
     
+    <system.webServer>
+      <staticContent>
+        <mimeMap fileExtension=".apk" mimeType="application/vnd.android.package-archive"/>
+      </staticContent>
+    </system.webServer>
+    
     <a href="application.apk">link</a>
   </body>
 </html>
